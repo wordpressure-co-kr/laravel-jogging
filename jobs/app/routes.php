@@ -14,9 +14,14 @@
 Route::get('/', function()
 {
 	//return View::make('hello');
-	return "All jobs";
+	return Redirect::to('jobs');
+});
+
+Route::get('jobs', function(){
+	return "All Jobs";
 });
 
 Route::get('jobs/{id}', function($id){
 	return "Job #$id";
 })->where('id', '[0-9]+');
+
