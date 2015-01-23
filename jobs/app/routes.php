@@ -25,3 +25,6 @@ Route::get('jobs/{id}', function($id){
 	return "Job #$id";
 })->where('id', '[0-9]+');
 
+Route::get('about', function(){
+	return View::make('about')->with('number_of_jobs', 9000);
+});

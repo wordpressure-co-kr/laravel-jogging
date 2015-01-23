@@ -68,6 +68,7 @@ App::down(function()
 });
 
 App::missing(function($exception) {
+//print_r($exception);
 	return Response::make("Page not found, bro", 404);
 });
 /*
