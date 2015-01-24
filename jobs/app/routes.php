@@ -18,7 +18,15 @@ Route::get('/', function()
 });
 
 Route::get('jobs', function(){
-	return "All Jobs";
+	$jobs = Job::all();
+	return View::make('jobs.index')->with('jobs', $jobs);
+});
+
+Route::get('jobs/companys/{name}', function($name){
+	$company = Company::whereName($name)->with('jobs')->first();
+	return View::make('jobs.index')
+		->with('company', $company)
+		->with('jobs', $company->jobs);
 });
 
 Route::get('jobs/{id}', function($id){
@@ -28,3 +36,6 @@ Route::get('jobs/{id}', function($id){
 Route::get('about', function(){
 	return View::make('about')->with('number_of_jobs', 9000);
 });
+
+
+
