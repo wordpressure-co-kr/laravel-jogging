@@ -37,5 +37,9 @@ Route::get('about', function(){
 	return View::make('about')->with('number_of_jobs', 9000);
 });
 
-
+Route::get('jobs/{id}', function($id) {
+	$job = Job::find($id);
+	return View::make('jobs.single')
+		->with('job', $job);
+});
 
