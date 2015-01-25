@@ -1,0 +1,1 @@
+../jobs/app/views/jobs/single.blade.php
