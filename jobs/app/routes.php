@@ -43,3 +43,9 @@ Route::get('jobs/{id}', function($id) {
 		->with('job', $job);
 });
 
+Route::get('jobs/create', function() {
+	$job = new Job;
+	return View::make('jobs.edit')
+		->with('job', $job)
+		->with('method', 'post');
+});
