@@ -49,3 +49,15 @@ Route::get('jobs/create', function() {
 		->with('job', $job)
 		->with('method', 'post');
 });
+
+Route::get('jobs/{job}/edit', function(Job $job) {
+	return View::make('jobs.edit')
+	->with('job', $job)
+	->with('method', 'put');
+});
+
+Route::get('jobs/{job}/delete', function(Job $job) {
+	return View::make('jobs.edit')
+	->with('job', $job)
+	->with('method', 'delete');
+});
