@@ -80,4 +80,14 @@ Route::delete('jobs/{job}', function(Job $job) {
 		->with('message', 'Successfully deleted page!');
 });
 
+View::composer('jobs.edit', function($view) {
+	$companys = Company::all();
+	if ( count($companys) > 0 ) {
+		$company_options = array_combine( $companys->lists('id'), $companys->lists('name'));
+	} else {
+		$company_options = array( null, 'Unspecified' );
+	}
+	$view->with('company_options', $company_options);
+});
+
 
