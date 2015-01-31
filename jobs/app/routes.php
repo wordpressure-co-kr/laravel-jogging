@@ -61,3 +61,23 @@ Route::get('jobs/{job}/delete', function(Job $job) {
 	->with('job', $job)
 	->with('method', 'delete');
 });
+
+Route::post('jobs', function() {
+	$job = Job::create(Input::all());
+	return Redirect::to('jobs' . $job->id)
+		->with('message', 'Successfully created page!');
+});
+
+Route::put('jobs/{job}', function(Job $job) {
+	$job->update(Input::all());
+	return Redirect::to('jobs/' . $job->id)
+		->with('message', 'Successfully updated page!');
+});
+
+Route::delete('jobs/{job}', function(Job $job) {
+	$job->delete();
+	return Redirect::to('jobs')
+		->with('message', 'Successfully deleted page!');
+});
+
+
