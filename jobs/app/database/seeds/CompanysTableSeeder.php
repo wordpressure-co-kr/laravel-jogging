@@ -2,7 +2,7 @@
 
 class CompanysTableSeeder extends Seeder {
 	public function run() {
-		DB::table('companys')->insert(array(
+		DB::table('companies')->insert(array(
 			array('id'=>1, 'name'=>"SkyAperture"),
 			array('id'=>2, 'name'=>"StackExchange"),
 			array('id'=>3, 'name'=>"WordPress"),
