@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('header')
-	@if(isset(@company))
+	@if(null!==(@company))
 		{{link_to('/', 'Back to the overview')}}
 	@endif
 	<h2>
