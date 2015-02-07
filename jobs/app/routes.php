@@ -22,6 +22,11 @@ Route::get('jobs', function(){
 	return View::make('jobs.index')->with('jobs', $jobs);
 });
 
+Route::get('jobs/now', function() {
+	return View::make('jobs.now');
+});
+
+
 Route::get('jobs/companys/{name}', function($name){
 	$company = Company::whereName($name)->with('jobs')->first();
 	return View::make('jobs.index')
