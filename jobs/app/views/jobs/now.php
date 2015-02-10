@@ -4,3 +4,4 @@
 	$coms = Company::all();
 	print_r($coms);
 
+	
